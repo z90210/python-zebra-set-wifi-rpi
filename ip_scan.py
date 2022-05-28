@@ -8,9 +8,30 @@ class Ip_scan:
     my_ip = ""
     my_mask = ""
     my_broadcast = ""
+    my_gateway = ""
 
     ip_occupied = []
     ip_available = []
+
+    def get_gateway(self):
+    
+        """
+        返回本机ip信息到class my_ip, my_mask, my_broadcast
+        """
+        gateway_info=subprocess.run(f"ip route | grep default | grep {self.interface}",
+                                     shell=True, 
+                                     stdout=subprocess.PIPE, 
+                                     stderr=subprocess.PIPE, 
+                                     text=True)
+
+        if gateway_info.stderr:
+            raise Exception(gateway_info.stderr)
+
+        ip_pattern = r"\b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b"
+        gateway_match = re.search(ip_pattern, gateway_info.stdout)
+        if gateway_match:
+            self.my_gateway = gateway_match.group(1)
+            
 
     def get_ifconfig(self):
         """
@@ -22,6 +43,8 @@ class Ip_scan:
                              stdout=subprocess.PIPE, 
                              stderr=subprocess.PIPE, 
                              text=True)
+                             
+ 
 
         # print(ip_info.stdout)
 
@@ -78,7 +101,7 @@ class Ip_scan:
         print("")
 
         # 列出所有ip的 可用/占用 状态
-        # 生成可用列表 self.ip_available       # 
+        # 生成可用列表 self.ip_available
         ip_available = []
         n = range(1,ip_count+1)
         for i in n:
@@ -101,4 +124,7 @@ if __name__ == "__main__":
     ip_scan.arp_scan()
     print(ip_scan.ip_occupied)
     ip_scan.report()
+
+    ip_scan.get_gateway()
+    print("gateway: ", ip_scan.my_gateway)
     

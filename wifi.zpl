@@ -8,7 +8,7 @@
 ^WEOFF,1,,,,,,
 ^WP0,0
 ^WR,,,,100
-^WSAshcloud,I,L,,,
+^WSAshCloud,I,L,,,
 ^NBS
 ^WLOFF,,
 ^WKOFF,,,,
@@ -21,3 +21,4 @@
 ! U1 setvar "wlan.international_mode" "off"
 ! U1 setvar "wlan.allowed_band" "all"
 ! U1 do "device.reset" ""
+    
