@@ -7,6 +7,11 @@ from ip_scan import Ip_scan
 from printer_tools import validate_printer_wifi, find_ssid_in_list, gen_wpa_psk, make_setting_script
 
 
+print("阿什克劳德 斑马打印机 WiFi 自动配网")
+print("2022-05-29 V0.1")
+print("目前仅针对斑马ZD888")
+print("其他机型请谨慎使用")
+print()
 
 print("======================")
 print("第一阶段: 获取Wifi信息")

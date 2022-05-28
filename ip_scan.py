@@ -45,8 +45,6 @@ class Ip_scan:
                              stderr=subprocess.PIPE, 
                              text=True)
                              
- 
-
         # print(ip_info.stdout)
 
         if ip_info.stderr:
@@ -106,7 +104,7 @@ class Ip_scan:
         ip_available = []
         n = range(1,ip_count+1)
         for i in n:
-            time.sleep(0.01)
+            time.sleep(0.005)
             if str(local_net[i]) in self.ip_occupied:
                 text= '已占用: ' + str(local_net[i])
                 print(colored(text,'red'))
