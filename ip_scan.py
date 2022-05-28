@@ -65,6 +65,7 @@ class Ip_scan:
         生成可用列表 self.ip_available
         """
         print("生成扫描报告")
+        print("")
 
         # 用ip及mask，生成CIDR格式网段
         cidr = IPAddress(self.my_mask).netmask_bits()
@@ -74,6 +75,7 @@ class Ip_scan:
         
         ip_count = 2**(32-cidr)-2
         print("此网段总IP数量:", ip_count)
+        print("")
 
         # 列出所有ip的 可用/占用 状态
         # 生成可用列表 self.ip_available       # 
