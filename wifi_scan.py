@@ -140,8 +140,8 @@ class Wifi_scan:
             print("self.wifi_dicts为空，请先运行 wifi_list_to_dict()")
             raise Exception("wifi_list为空")
 
-
-        t = PrettyTable(['ID','SSID', 'RSSI', 'BAND', 'Ch.', 'Enc.', 'PSK', 'BSSID'])
+        #t = PrettyTable(['ID','SSID', 'RSSI', 'BAND', 'Ch.', 'Enc.', 'PSK', 'BSSID'])
+        t = PrettyTable(['ID','SSID', 'RSSI', 'BAND', 'Ch.', 'Enc.', 'PSK'])
         for row in self.wifi_dicts:
             t.add_row([row['id'],
                        row['ssid'],
@@ -150,7 +150,7 @@ class Wifi_scan:
                        row['channel'],
                        row['encrypted'],
                        row['psk'],
-                       row['bssid']
+                       #row['bssid']
                       ])
 
         t.align["ID"] = "r"    

@@ -176,4 +176,5 @@ print()
 
 printer_ip="192.168.50.1"
 command = f"export DISPLAY=:0.0; firefox-esr http://{printer_ip}"
-p=subprocess.Popen(command, shell=True, text=True)
+#command = "firefox-esr http://{printer_ip}"
+subprocess.run(command, shell=True, text=True)

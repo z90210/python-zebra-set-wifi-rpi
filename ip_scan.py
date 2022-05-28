@@ -2,6 +2,7 @@ import subprocess, time, re
 from termcolor import colored
 from netaddr import IPAddress
 import ipaddress
+import time
 
 class Ip_scan:
     interface = "wlan0"
@@ -105,6 +106,7 @@ class Ip_scan:
         ip_available = []
         n = range(1,ip_count+1)
         for i in n:
+            time.sleep(0.01)
             if str(local_net[i]) in self.ip_occupied:
                 text= '已占用: ' + str(local_net[i])
                 print(colored(text,'red'))
