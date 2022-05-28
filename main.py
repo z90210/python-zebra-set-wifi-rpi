@@ -10,7 +10,7 @@ while True:
         print(colored(str(e),"yellow"))
         input("请检查Wifi后按Enter继续:")
     else:
-        print("当前连接SSID: ", wifi.current_ssid)
+        print("当前连接SSID: ", colored(wifi.current_ssid, "green"))
         break
 
 

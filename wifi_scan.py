@@ -79,7 +79,7 @@ class Wifi_scan:
         返回Wifi信息列表
         """
         print("开始扫描WiFi...请稍候")
-        wireless=subprocess.run("sudo iwlist wlan0 scan", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        wireless=subprocess.run(f"sudo iwlist {self.interface} scan", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     #    wireless=subprocess.run("ls", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         # print("stderr: ", wireless.stderr)
