@@ -147,7 +147,7 @@ input('确认完成，请按Enter开始写入配置档到打印机')
 print()
 
 while True:
-    w=subprocess.run("echo wifi.zpl > /dev/usb/lp0",
+    w=subprocess.run("cat wifi.zpl > /dev/usb/lp0",
                                  shell=True,
                                  stdout=subprocess.PIPE,
                                  stderr=subprocess.PIPE,
@@ -179,7 +179,7 @@ while (timer>=0):
 print()
 
 
-printer_ip="192.168.50.1"
+#printer_ip="192.168.50.1"
 command = f"export DISPLAY=:0.0; firefox-esr http://{printer_ip}"
 #command = "firefox-esr http://{printer_ip}"
 subprocess.run(command, shell=True, text=True)

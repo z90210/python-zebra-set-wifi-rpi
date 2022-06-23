@@ -10,8 +10,8 @@ def find_ssid_in_list(wifi_list, ssid):
         print(d['ssid'])
         if d['ssid'] == ssid:
             return d
-        else:
-            raise Exception("ssid not found in the list!")
+    else:
+        raise Exception("ssid not found in the list!")
 
 def validate_printer_wifi(wifi):
     if wifi['encrypted'] == "off":
@@ -35,8 +35,8 @@ def validate_printer_wifi(wifi):
 
 
 def gen_wpa_psk(SSID, WPA_SECRET):
-    SSID="Ashcloud"
-    WPA_SECRET="Passw0rd@1213|0412"
+#    SSID="Ashcloud"
+#    WPA_SECRET="Passw0rd@1213|0412"
     WPA_PSK_KEY = pbkdf2.pbkdf2(str.encode(WPA_SECRET), str.encode(SSID), 4096, 32)
     WPA_PSK_RAWKEY = binascii.hexlify(WPA_PSK_KEY).decode("utf-8").upper()
     #print(WPA_PSK_RAWKEY)
@@ -52,10 +52,10 @@ def make_setting_script(ssid, psk, ip, mask, gateway):
     psk=psk
     zpl = f"""
 ^XA
-^WIA
+^WIP,{ip},{mask},{gateway}
 ^NC2
 ^NPP
-^KC1,0,,
+^KC0,0,,
 ^WAD,D
 ^WEOFF,1,,,,,,
 ^WP0,0
