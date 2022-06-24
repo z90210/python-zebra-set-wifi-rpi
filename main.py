@@ -168,9 +168,9 @@ print('随后启动浏览器，查看打印机IP')
 print('如能在浏览器看到打印机内置网页')
 print('即表示配置成功')
 print()
-print('等待10秒，打印机重启中...')
+print('等待30秒，打印机重启中...')
 
-timer =10
+timer = 30
 while (timer>=0):
     print(f"\r 等待 {timer}秒   ", end="")
     timer -= 1
