@@ -66,6 +66,7 @@ def make_setting_script(ssid, psk, ip, mask, gateway):
 ^WLOFF,,
 ^WKOFF,,,,
 ^WX09,{psk}
+~SD20
 ^XZ
 ^XA
 ^JUS
