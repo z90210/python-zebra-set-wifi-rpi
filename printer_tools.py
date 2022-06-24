@@ -52,7 +52,7 @@ def make_setting_script(ssid, psk, ip, mask, gateway):
     psk=psk
     zpl = f"""
 ^XA
-^JUF
+^JUN
 ^WIP,{ip},{mask},{gateway}
 ^NC2
 ^NPP
