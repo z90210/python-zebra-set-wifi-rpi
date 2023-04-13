@@ -8,6 +8,6 @@
 
 2. python3 main.py
 
-## more instruction
+## Video instruction
 
-https://wiki.ashcloudapp.com/home/public/class/zebra_wifi
+[Youtube](https://www.youtube.com/watch?v=o6irjE7JJJI)
